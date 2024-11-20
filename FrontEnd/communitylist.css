@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h2 {
+    background-color: #d3f0d6;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.post-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.post-list th,
+.post-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.post-list th {
+    background-color: #d3f0d6;
+}
+.write-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#write-post-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#write-post-btn:hover {
+    background-color: #45a049;
+}
