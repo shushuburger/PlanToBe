@@ -8,11 +8,10 @@ document.getElementById("submit").addEventListener("click", () => {
         return;
     }
 
-    // 작성된 정보를 LocalStorage에 저장
     const post = {
         title,
         content,
-        photo: photo ? photo.name : "사진 없음", // 파일 이름만 저장
+        photo: photo ? photo.name : "사진 없음",
         date: new Date().toLocaleDateString("ko-KR"),
         author: "익명"
     };
@@ -22,5 +21,5 @@ document.getElementById("submit").addEventListener("click", () => {
     localStorage.setItem("posts", JSON.stringify(posts));
 
     alert("게시글이 등록되었습니다.");
-    window.location.href = "communitylist.html"; // 글 목록 화면으로 이동
+    window.location.href = "communitylist.html"; 
 });

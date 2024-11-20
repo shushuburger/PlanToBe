@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (post.photo && post.photo !== "사진 없음") {
         const photoElement = document.getElementById("detail-photo");
-        photoElement.src = post.photo; // 실제 이미지 URL로 연결 필요
+        photoElement.src = post.photo;
         photoElement.style.display = "block";
     }
 

@@ -31,6 +31,8 @@ h2 {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    padding-right: 50px;
+    padding-bottom: 50px;
 }
 
 #write-post-btn {

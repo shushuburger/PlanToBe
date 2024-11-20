@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 게시글 클릭 시 상세 화면으로 이동
     document.querySelectorAll(".post-link").forEach(link => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
