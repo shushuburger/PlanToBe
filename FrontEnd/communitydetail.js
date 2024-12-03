@@ -18,7 +18,63 @@ document.addEventListener("DOMContentLoaded", () => {
         photoElement.style.display = "block";
     }
 
+    // 댓글 초기화
+    const commentSection = document.getElementById("comments");
+    const comments = JSON.parse(localStorage.getItem("comments")) || {};
+    const postComments = comments[post.title] || [];
+
+    function renderComments() {
+        commentSection.innerHTML = ""; // 기존 댓글 제거
+        postComments.forEach(comment => {
+            const commentElement = document.createElement("p");
+            commentElement.textContent = comment;
+            commentSection.appendChild(commentElement);
+        });
+    }
+
+    renderComments();
+
+    // 댓글 추가
+    document.getElementById("add-comment-button").addEventListener("click", () => {
+        const commentInput = document.getElementById("comment-input");
+        const commentText = commentInput.value.trim();
+
+        if (commentText === "") {
+            alert("댓글을 입력하세요.");
+            return;
+        }
+
+        postComments.push(commentText);
+        comments[post.title] = postComments;
+        localStorage.setItem("comments", JSON.stringify(comments));
+
+        commentInput.value = "";
+        renderComments();
+    });
+
     document.getElementById("back-button").addEventListener("click", () => {
         window.location.href = "communitylist.html";
+    });
+
+    document.getElementById("delete-button").addEventListener("click", () => {
+        const posts = JSON.parse(localStorage.getItem("posts")) || [];
+        const selectedPost = JSON.parse(localStorage.getItem("selectedPost"));
+
+        if (!selectedPost) {
+            alert("게시글 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        const updatedPosts = posts.filter(post => post.title !== selectedPost.title || post.date !== selectedPost.date);
+        localStorage.setItem("posts", JSON.stringify(updatedPosts));
+        localStorage.removeItem("selectedPost");
+
+        alert("게시글이 삭제되었습니다.");
+        window.location.href = "communitylist.html";
+    });
+
+    const logo = document.getElementById("logo");
+    logo.addEventListener("click", () => {
+        window.location.href = "main.html";  // 메인 화면으로 이동
     });
 });

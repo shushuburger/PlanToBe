@@ -29,3 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("write-post-btn").addEventListener("click", () => {
     window.location.href = "communitywriting.html";
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const logo = document.getElementById("logo");
+    
+    logo.addEventListener("click", () => {
+        window.location.href = "main.html";  // 메인 화면으로 이동
+    });
+});

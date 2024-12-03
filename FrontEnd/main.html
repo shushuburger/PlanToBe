@@ -16,7 +16,7 @@
         }
 
         header {
-            background-color: #d3f0d6;
+            background-color: #ffffff;
             width: 100%;
             height: 70px;
             padding: 10px 20px; 
@@ -24,6 +24,7 @@
             align-items: center;
             justify-content: space-between;
             box-sizing: border-box; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -104,11 +105,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">PlantToBe</div>
+        <div class="logo" id="logo">PlantToBe</div>
         <div class="search-bar">
             <input type="text" placeholder="검색할 식물을 입력하세요." />
         </div>
     </header>
+    
     <div class="container">
         <div class="box">
             <h2>식물추천어쩌구</h2>
