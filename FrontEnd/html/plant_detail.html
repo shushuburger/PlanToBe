@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Detail</title>
+  <link rel="stylesheet" href="../css/plant_detail.css">
+</head>
+<body>
+  <!-- 상단 부분 -->
+  <div class="header">
+    <h1>PlanToBe</h1>
+  </div>
+
+  <!-- 상세 정보 카드 -->
+  <div class="detail-card">
+    <div class="detail-left">
+      <div class="plant-photo" id="plant-photo">사진</div>
+    </div>
+    <div class="detail-right">
+      <h2 id="plant-name">식물 이름</h2>
+      <p id="plant-info">식물에 대한 정보</p>
+      <div class="buttons">
+        <button class="back-btn" onclick="goBack()">←</button>
+        <button id="grow-btn" class="grow-btn">키우기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/plant_detail.js"></script>
+</body>
+</html>
