@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantToBe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #ffffff;
+            width: 100%;
+            height: 70px;
+            padding: 10px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            width: 300px;
+            padding: 50px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 20px 0;
+        }
+
+        .box {
+            height: 270px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .box h2 {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .recommendations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .recommendations button {
+            height: 80px;
+            margin: 5px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .actions {
+            height: 270px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .actions button {
+            flex: 1;
+            margin: 0 10px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" id="logo">PlantToBe</div>
+        <div class="search-bar">
+            <input type="text" placeholder="검색할 식물을 입력하세요." />
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="box">
+            <h2>식물추천어쩌구</h2>
+            <div class="recommendations">
+                <button>힐링</button>
+                <button>공기정화</button>
+                <button>난이도별</button>
+                <button>식용</button>
+            </div>
+        </div>
+        <div class="box">
+            <h2>캘린더 or todo</h2>
+        </div>
+    </div>
+    <div class="actions">
+        <button>식물 문제 진단</button>
+        <button>커뮤니티 바로가기</button>
+    </div>
+
+    <script>
+        document.querySelector(".actions button:nth-child(2)").addEventListener("click", () => {
+            window.location.href = "communitylist.html";
+        });
+    </script>
+</body>
+</html>

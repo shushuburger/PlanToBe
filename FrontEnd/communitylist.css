@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h2 {
+    background-color: #d3f0d6;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.post-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.post-list th,
+.post-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.post-list th {
+    background-color: #d3f0d6;
+}
+.write-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+#write-post-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#write-post-btn:hover {
+    background-color: #45a049;
+}
+/* 헤더 수정 */
+header {
+    background-color: #ffffff;
+    width: 100%;
+    height: 70px;
+    padding: 10px 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;  /* 헤더를 화면 상단에 고정 */
+    left: 0;
+    z-index: 1000;  /* 다른 요소들보다 위에 오게 함 */
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-bar {
+    width: 300px;
+    padding-right: 50px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 본문 내용이 헤더 아래로 오게 하기 위해 여백 추가 */
+body {
+    padding-top: 60px;  /* 헤더 높이만큼 여백 추가 */
+}

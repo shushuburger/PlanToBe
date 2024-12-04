@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 상세</title>
+    <link rel="stylesheet" href="communitydetail.css">
+</head>
+<body>
+    <header>
+        <div class="logo" id="logo">PlantToBe</div>
+        <div class="search-bar">
+            <input type="text" placeholder="검색할 식물을 입력하세요." />
+        </div>
+    </header>
+    
+    <h2>게시글 상세 화면</h2>
+    <div class="post-detail">
+        <h3 id="detail-title">제목</h3>
+        <p id="detail-date">날짜: </p>
+        <p id="detail-author">글쓴이: </p>
+        <img id="detail-photo" alt="첨부된 사진" style="max-width: 100%; display: none;">
+        <p id="detail-content">내용: </p>
+    </div>
+
+    <h3>댓글</h3>
+    <div id="comment-section">
+        <div id="comments"></div>
+        <textarea id="comment-input" placeholder="댓글을 입력하세요." rows="3"></textarea>
+        <button id="add-comment-button">댓글 추가</button>
+    </div>
+
+    <button id="back-button">목록으로 돌아가기</button>
+    <button id="delete-button">삭제</button>
+
+    <script src="communitydetail.js"></script>
+</body>
+</html>

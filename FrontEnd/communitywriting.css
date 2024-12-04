@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h2 {
+    background-color: #d3f0d6;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.write-form {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.write-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.write-form input,
+.write-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.write-form button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.write-form button:hover {
+    background-color: #4cae4c;
+}
