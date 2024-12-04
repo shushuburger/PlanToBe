@@ -65,12 +65,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // 루틴 일정 생성
+      // 현재 로컬 날짜 구하기
       const today = new Date();
+      const localDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+      // 루틴 일정 생성
       const newEvents = [
         {
           title: `${nickname} 키우기 시작`,
-          start: today.toISOString().split("T")[0],
+          start: localDate, // 로컬 날짜 저장
           backgroundColor: "#BEDFB2",
           borderColor: "#BEDFB2",
           textColor: "#000000"
@@ -80,9 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
           for (let i = 0; i < 30; i += routine.frequency) {
             const eventDate = new Date(today);
             eventDate.setDate(today.getDate() + i);
+            const eventLocalDate = `${eventDate.getFullYear()}-${String(eventDate.getMonth() + 1).padStart(2, "0")}-${String(eventDate.getDate()).padStart(2, "0")}`;
             routineEvents.push({
               title: `${nickname} - ${routine.title}`,
-              start: eventDate.toISOString().split("T")[0],
+              start: eventLocalDate, // 로컬 날짜 저장
               backgroundColor: "#BEDFB2",
               borderColor: "#BEDFB2",
               textColor: "#000000"
@@ -97,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("calendarEvents", JSON.stringify(updatedData));
 
       // 캘린더로 이동
-      window.location.href = "calendar.html";
+      window.location.href = "../calendar/calendar.html";
     });
   } else {
     // 식물 정보가 없을 경우 기본 메시지 표시
