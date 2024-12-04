@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanToBe</title>
+    <link rel="stylesheet" type="text/css" href="../css/detail.css">
+</head>
+<body>
+    <div id="header-container" class="header-container">
+        <h2 id="header-title">PlanToBe</h2>
+    </div>
+    <div id="detail-container" div class="detail-container">
+        <div class="content">
+            <div class="title" id="dynamic-title"></div>
+            <div class="solution">해결방안 1</div>
+        </div>
+    </div>
+    <script>
+        // URL 파라미터에서 title 값을 가져오는 함수
+        function getTitleFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('title');
+        }
+
+        // 제목을 설정
+        document.getElementById('dynamic-title').textContent = getTitleFromUrl();
+    </script>
+</body>
+</html>
