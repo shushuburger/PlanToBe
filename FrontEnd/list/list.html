@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문제 사항 목록</title>
-    <link rel="stylesheet" type="text/css" href="../css/list.css">
+    <link rel="stylesheet" type="text/css" href="list.css">
 </head>
 <body>
     <div id="header-container" class="header-container">
@@ -17,18 +17,18 @@
             <div class="menu-item" onclick="toggleContent('content3')">해충</div>
         </div>
         <div class="content" id="content1">
-            <p onclick="goToNextPage('../html/detail.html', '흙이 브라우니가 됐을 때')">1. 흙이 브라우니가 됐을 때</p>
-            <p onclick="goToNextPage('../html/detail.html', '흙이 부스러기가 됐을 때')">2. 흙이 부스러기가 됐을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '흙이 브라우니가 됐을 때')">1. 흙이 브라우니가 됐을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '흙이 부스러기가 됐을 때')">2. 흙이 부스러기가 됐을 때</p>
         </div>
         <div class="content" id="content2">
-            <p onclick="goToNextPage('../html/detail.html', '잎이 막혔을 때')">1. 잎이 막혔을 때</p>
-            <p onclick="goToNextPage('../html/detail.html', '잎이 뚫렸을 때')">2. 잎이 뚫렸을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '잎이 막혔을 때')">1. 잎이 막혔을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '잎이 뚫렸을 때')">2. 잎이 뚫렸을 때</p>
         </div>
         <div class="content" id="content3">
-            <p onclick="goToNextPage('../html/detail.html', '해충이 발생했을 때')">1. 해충이 발생했을 때</p>
-            <p onclick="goToNextPage('../html/detail.html', '해충이 없어졌을 때')">2. 해충이 없어졌을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '해충이 발생했을 때')">1. 해충이 발생했을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '해충이 없어졌을 때')">2. 해충이 없어졌을 때</p>
         </div>
     </div>
-    <script src="../js/list.js"></script>
+    <script src="list.js"></script>
 </body>
 </html>
