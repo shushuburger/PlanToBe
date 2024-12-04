@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", function () {
         const plantName = this.parentElement.querySelector("span").textContent;
         // `plant_detail.html`로 이동하며 식물 이름을 URL에 전달
-        window.location.href = `plant_detail.html?plant=${encodeURIComponent(plantName)}`;
+        window.location.href = `../plant_detail/plant_detail.html?plant=${encodeURIComponent(plantName)}`;
       });
     });
   });
