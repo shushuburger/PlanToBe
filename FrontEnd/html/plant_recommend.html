@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanToBe - Plant Recommendations</title>
+  <link rel="stylesheet" href="../css/plant_recommend.css">
+</head>
+<body>
+  <!-- 상단 부분 -->
+  <div class="header">
+    <h1>PlanToBe</h1>
+  </div>
+
+  <!-- 식물 추천 제목 -->
+  <div class="sub-header">
+    <h2>식물 추천</h2>
+  </div>
+
+  <!-- 버튼과 리스트를 표시하는 영역 -->
+  <div class="list-container">
+    <!-- 카테고리 버튼 -->
+    <div class="button-container">
+      <button class="category-btn" data-category="healing">힐링</button>
+      <button class="category-btn" data-category="air-purification">공기정화</button>
+      <button class="category-btn" data-category="difficulty">난이도</button>
+      <button class="category-btn" data-category="edible">식용</button>
+    </div>
+
+    <!-- 난이도 선택 -->
+    <div id="difficulty-selector" class="difficulty-selector hidden">
+      <h3>난이도 선택</h3>
+      <button class="difficulty-btn" data-level="high">상</button>
+      <button class="difficulty-btn" data-level="medium">중</button>
+      <button class="difficulty-btn" data-level="low">하</button>
+    </div>
+
+    <!-- 각 카테고리에 맞는 리스트 -->
+    <div class="plant-list-container">
+      <ul id="healing" class="plant-list hidden">
+        <li>
+          <span>고구마</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>몬스테라</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>산세베리아</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>필로덴드론</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+      </ul>
+      <ul id="air-purification" class="plant-list hidden">
+        <li>
+          <span>스파티필름</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>아레카야자</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>페퍼로미아</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>틸란드시아</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+      </ul>
+      <ul id="difficulty-high" class="plant-list hidden">
+        <li>
+          <span>몬스테라</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+      </ul>
+      <ul id="difficulty-medium" class="plant-list hidden">
+        <li>
+          <span>산세베리아</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+      </ul>
+      <ul id="difficulty-low" class="plant-list hidden">
+        <li>
+          <span>고구마</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+      </ul>
+      <ul id="edible" class="plant-list hidden">
+        <li>
+          <span>바질</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>로즈마리</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>타임</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+        <li>
+          <span>딜</span>
+          <button class="details-btn">세부정보 보기</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../js/plant_recommend.js"></script>
+</body>
+</html>
