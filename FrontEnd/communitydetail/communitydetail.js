@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!post) {
         alert("게시글 데이터를 불러올 수 없습니다.");
-        window.location.href = "communitylist.html";
+        window.location.href = "../communitylist/communitylist.html";
         return;
     }
 
@@ -18,13 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
         photoElement.style.display = "block";
     }
 
-    // 댓글 초기화
     const commentSection = document.getElementById("comments");
     const comments = JSON.parse(localStorage.getItem("comments")) || {};
     const postComments = comments[post.title] || [];
 
     function renderComments() {
-        commentSection.innerHTML = ""; // 기존 댓글 제거
+        commentSection.innerHTML = "";
         postComments.forEach(comment => {
             const commentElement = document.createElement("p");
             commentElement.textContent = comment;
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderComments();
 
-    // 댓글 추가
     document.getElementById("add-comment-button").addEventListener("click", () => {
         const commentInput = document.getElementById("comment-input");
         const commentText = commentInput.value.trim();
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("back-button").addEventListener("click", () => {
-        window.location.href = "communitylist.html";
+        window.location.href = "../communitylist/communitylist.html";
     });
 
     document.getElementById("delete-button").addEventListener("click", () => {
@@ -70,11 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("selectedPost");
 
         alert("게시글이 삭제되었습니다.");
-        window.location.href = "communitylist.html";
+        window.location.href = "../communitylist/communitylist.html";
     });
 
     const logo = document.getElementById("logo");
     logo.addEventListener("click", () => {
-        window.location.href = "main.html";  // 메인 화면으로 이동
+        window.location.href = "../main.html";
     });
 });

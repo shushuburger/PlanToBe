@@ -22,17 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const index = e.target.getAttribute("data-index");
             const selectedPost = posts[index];
             localStorage.setItem("selectedPost", JSON.stringify(selectedPost));
-            window.location.href = "communitydetail.html";
+            window.location.href = "../communitydetail/communitydetail.html";
         });
     });
 });
 document.getElementById("write-post-btn").addEventListener("click", () => {
-    window.location.href = "communitywriting.html";
+    window.location.href = "../communitywriting/communitywriting.html";
 });
 document.addEventListener("DOMContentLoaded", () => {
     const logo = document.getElementById("logo");
     
     logo.addEventListener("click", () => {
-        window.location.href = "main.html";  // 메인 화면으로 이동
+        window.location.href = "../main.html";  // 메인 화면으로 이동
     });
 });
