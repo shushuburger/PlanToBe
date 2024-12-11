@@ -114,3 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.history.back();
   };
 });
+document.getElementById('header-logo').addEventListener('click', () => {
+  window.location.href = 'main.html'; // Adjust path as needed
+});

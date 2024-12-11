@@ -68,3 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   calendar.render();
 });
+document.getElementById('header-logo').addEventListener('click', () => {
+  window.location.href = '../main.html'; // Adjust path as needed
+});

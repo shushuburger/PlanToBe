@@ -13,20 +13,34 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.header-container {
-    text-align: left;
-    background-color: #C2F1C8;
-    padding: 10px 0;
+header {
+    background-color: #ffffff;
     width: 100%;
-    position: absolute;
-    top: 0;
+    height: 70px;
+    padding: 10px 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#header-title {
-    color: black;
-    margin: 0;
-    margin-left: 20px;
-    font-size: 35px;
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 50px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 
