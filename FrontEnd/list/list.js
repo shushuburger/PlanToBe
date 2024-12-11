@@ -26,3 +26,6 @@ function goToNextPage(page, title) {
     const encodedTitle = encodeURIComponent(title);
     window.location.href = `${page}?title=${encodedTitle}`;
 }
+document.getElementById('header-logo').addEventListener('click', () => {
+    window.location.href = '../main.html'; // Adjust path as needed
+});

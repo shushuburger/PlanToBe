@@ -7,10 +7,15 @@
     <link rel="stylesheet" type="text/css" href="list.css">
 </head>
 <body>
-    <div id="header-container" class="header-container">
-        <h2 id="header-title">PlanToBe</h2>
-    </div>
-    <div id="list-container" div class="list-container">
+    <header>
+        <div class="logo" id="header-logo">PlantToBe</div>
+        <div class="search-bar">
+            <input type="text" placeholder="검색할 식물을 입력하세요." />
+        </div>
+    </header>
+
+    <!-- 리스트 컨테이너 -->
+    <div id="list-container" class="list-container">
         <div class="menu">
             <div class="menu-item" onclick="toggleContent('content1')">토양</div>
             <div class="menu-item" onclick="toggleContent('content2')">잎</div>
