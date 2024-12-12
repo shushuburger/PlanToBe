@@ -113,6 +113,25 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        #logout-button {
+            padding: 5px 10px;
+            background-color: #BEDFB2;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #logout-button:hover {
+            background-color: #a3d392;
+        }
     </style>
 </head>
 <body>
@@ -120,6 +139,10 @@
         <div class="logo" id="header-logo">PlantToBe</div>
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="검색할 식물을 입력하세요." />
+        </div>
+        <div class="user-info">
+            <span id="logged-in-user"></span>
+            <button id="logout-button" style="display: none; margin-left: 10px;">로그아웃</button>
         </div>
     </header>
     
@@ -236,6 +259,27 @@
                     todoListEl.appendChild(listItem);
                 });
             }
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const loggedInUserEl = document.getElementById("logged-in-user");
+            const logoutButton = document.getElementById("logout-button");
+        
+            // localStorage에서 사용자 정보 가져오기
+            const user = JSON.parse(localStorage.getItem("user"));
+        
+            if (user && user.username) {
+                loggedInUserEl.textContent = `환영합니다, ${user.username}!`;
+                logoutButton.style.display = "block";
+            } else {
+                loggedInUserEl.textContent = "로그인이 필요합니다.";
+                logoutButton.style.display = "none";
+            }
+        
+            // 로그아웃 버튼 클릭 이벤트
+            logoutButton.addEventListener("click", () => {
+                alert("로그아웃되었습니다.");
+                window.location.href = "login/login.html"; // 로그인 페이지로 이동
+            });
         });
     </script>
 </body>
