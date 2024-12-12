@@ -44,7 +44,7 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 20px; /* 헤더와 간격 추가 */
+    margin-top: 200px; /* 헤더와 간격 추가 */
 }
 
 .menu {
@@ -59,7 +59,7 @@ header {
     padding: 15px;
     cursor: pointer;
     text-align: center;
-    background-color: #A8CDA2;
+    background-color: #d0e6c3;
     margin: 2px;
     border-radius: 5px;
 }
@@ -76,8 +76,7 @@ header {
 
 .content {
     display: none;
-    padding: 20px;
-    margin-left: 170px;
-    background-color: #f0f4f0;
+    background-color: white;
     min-height: 200px;
+    padding-left: 50px;
 }

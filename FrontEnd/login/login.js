@@ -5,10 +5,13 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // 간단한 검증 로직 (예제용)
-    if (username === "test" && password === "1234") {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+
+    if (storedUser && storedUser.username === username && storedUser.password === password) {
         alert("로그인 성공!");
+        // 메인 페이지로 이동
+        window.location.href = '../main.html';
     } else {
-        alert("로그인 실패: 아이디 또는 비밀번호를 확인하세요.");
+        alert("아이디 또는 비밀번호가 잘못되었습니다.");
     }
 });

@@ -14,8 +14,17 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         return;
     }
 
+    const userData = {
+        username: username,
+        password: password,
+        phone: phone,
+        email: email
+    };
+
+    localStorage.setItem('user', JSON.stringify(userData));
+
     // 간단한 폼 검증 후 알림창 표시
     alert("회원가입 성공!\n아이디: " + username + "\n이메일: " + email + "\n전화번호: " + phone);
     
-    // 실제 서비스에서는 서버로 데이터를 전송하는 로직 필요
+    window.location.href = '../login/login.html';
 });
