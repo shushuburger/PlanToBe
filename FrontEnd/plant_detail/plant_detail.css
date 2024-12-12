@@ -68,13 +68,17 @@ body {
   .plant-photo {
     width: 80%;
     height: 200px;
-    background-color: #e8e8e8;
+    background-color: white;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     color: #777;
+    background-size: contain; /* 배경 이미지 크기를 요소에 맞게 설정 */
+    background-position: center; /* 배경 이미지의 중심을 맞춤 */
+    background-repeat: no-repeat;
+    object-fit: contain; /* 이미지를 부모 요소 크기에 맞게 축소/확대 */
   }
   
   /* 오른쪽 영역: 정보 및 버튼 */
