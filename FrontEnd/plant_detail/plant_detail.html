@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant Detail</title>
+  <title>식물 상세 정보</title>
   <link rel="stylesheet" href="./plant_detail.css">
 </head>
 <body>
@@ -11,9 +11,9 @@
   <header>
     <div class="logo" id="header-logo">PlantToBe</div>
     <div class="search-bar">
-        <input type="text" placeholder="검색할 식물을 입력하세요." />
+      <input type="text" id="searchInput" placeholder="검색할 식물을 입력하세요." />
     </div>
-</header>
+  </header>
 
   <!-- 상세 정보 카드 -->
   <div class="detail-card">
@@ -23,6 +23,7 @@
     <div class="detail-right">
       <h2 id="plant-name">식물 이름</h2>
       <p id="plant-info">식물에 대한 정보</p>
+      <p id="plant-caution" class="caution">주의사항: 해당 식물에 대한 주의사항이 없습니다.</p> <!-- 주의사항 표시 -->
       <div class="buttons">
         <button class="back-btn" onclick="goBack()">←</button>
         <button id="grow-btn" class="grow-btn">키우기</button>

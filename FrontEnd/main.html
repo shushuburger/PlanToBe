@@ -62,11 +62,6 @@
             text-align: center;
         }
 
-        .box h2 {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
         .recommendations {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -102,13 +97,29 @@
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        #todo-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+            max-height: 150px; /* 최대 높이 설정 */
+            overflow-y: auto;  /* 세로 스크롤 활성화 */
+        }
+
+        #todo-list li {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo" id="header-logo">PlantToBe</div>
         <div class="search-bar">
-            <input type="text" placeholder="검색할 식물을 입력하세요." />
+            <input type="text" id="searchInput" placeholder="검색할 식물을 입력하세요." />
         </div>
     </header>
     
@@ -123,7 +134,11 @@
             </div>
         </div>
         <div class="box">
-            <div class="calendar" id="calendar">캘린더</div>
+            <div class="calendar" id="calendar">
+                <h3>캘린더</h3>
+                <h5>Today's Todo</h5>
+                <ul id="todo-list"></ul>
+            </div>
         </div>
     </div>
     <div class="actions">
@@ -137,7 +152,7 @@
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
             });
-        
+
         document.querySelector(".actions button:nth-child(2)").addEventListener("click", () => {
             window.location.href = "communitylist/communitylist.html";
         });
@@ -153,6 +168,7 @@
                 window.location.href = "calendar/calendar.html"; 
             });
         });
+
         document.addEventListener("DOMContentLoaded", () => {
             const logo = document.getElementById("mainrecommend");
             
@@ -160,17 +176,72 @@
                 window.location.href = "plant_recommend/plant_recommend.html"; 
             });
         });
+
         document.querySelector(".recommendations button:nth-child(1)").addEventListener("click", () => {
-            window.location.href = "plant_recommend/plant_recommend.html";
-        }); 
+            window.location.href = "plant_recommend/plant_recommend.html?category=healing";
+        });
         document.querySelector(".recommendations button:nth-child(2)").addEventListener("click", () => {
-            window.location.href = "plant_recommend/plant_recommend.html";
-        });        
+            window.location.href = "plant_recommend/plant_recommend.html?category=air-purification";
+        });
         document.querySelector(".recommendations button:nth-child(3)").addEventListener("click", () => {
-            window.location.href = "plant_recommend/plant_recommend.html";
+            window.location.href = "plant_recommend/plant_recommend.html?category=difficulty";
         });
         document.querySelector(".recommendations button:nth-child(4)").addEventListener("click", () => {
-            window.location.href = "plant_recommend/plant_recommend.html";
+            window.location.href = "plant_recommend/plant_recommend.html?category=edible";
+        });  
+
+        const searchInput = document.getElementById("searchInput");        
+        searchInput.addEventListener("keyup", function (event) {
+            // Enter 키가 눌렸을 때만 동작
+            if (event.key === "Enter") {
+                const searchQuery = searchInput.value.trim().toLowerCase(); // 공백 제거 및 소문자 변환
+        
+                if (searchQuery.length > 0) {
+                    // 로컬스토리지에서 plantData 가져오기
+                    const plantData = JSON.parse(localStorage.getItem("plantData"));
+        
+                    // plantData가 존재하고, 그 key들만 뽑아서 리스트로 만들기
+                    const plantKeys = plantData ? Object.keys(plantData) : [];
+        
+                    // plantKeys에서 searchQuery와 일치하는 키가 있는지 확인
+                    const foundKey = plantKeys.find(key => key.toLowerCase().includes(searchQuery));
+        
+                    if (foundKey) {
+                        // 식물이 존재하면 plant_detail.html로 이동하며 정보를 전달
+                        window.location.href = `plant_detail/plant_detail.html?plant=${encodeURIComponent(foundKey)}`;
+                    } else {
+                        // 일치하는 식물이 없으면 실패 메시지 출력
+                        alert("식물 정보가 존재하지 않습니다.");                    }
+                }
+            }
+        });
+
+        // 오늘의 일정 처리 (변경 없음)
+        document.addEventListener("DOMContentLoaded", function () {
+            const todoListEl = document.getElementById("todo-list");
+
+            // 로컬 스토리지에서 저장된 이벤트 가져오기
+            const storedEvents = JSON.parse(localStorage.getItem("calendarEvents")) || [];
+
+            // 오늘 날짜 구하기
+            const today = new Date().toISOString().split('T')[0];  // "YYYY-MM-DD" 형식으로 가져오기
+
+            // 오늘의 일정을 필터링
+            const todayEvents = storedEvents.filter(event => event.start === today);
+
+            // 오늘의 일정이 없으면 "오늘의 todo 없음" 메시지 출력
+            if (todayEvents.length === 0) {
+                const noEventMessage = document.createElement('li');
+                noEventMessage.textContent = "오늘의 todo가 없습니다.";
+                todoListEl.appendChild(noEventMessage);
+            } else {
+                // 오늘의 일정이 있다면 이를 표시
+                todayEvents.forEach(event => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = event.title;  // 일정 제목 표시
+                    todoListEl.appendChild(listItem);
+                });
+            }
         });
     </script>
 </body>
