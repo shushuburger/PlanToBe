@@ -67,6 +67,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   calendar.render();
+  const userData = JSON.parse(localStorage.getItem("user"));  // 사용자 데이터 가져오기
+  const userEmail = userData ? userData.email : null;  // 이메일 정보 가져오기
+
+  emailjs.init("G6CmWIfOhB14UwjnD");
+
+    const today = new Date();
+    const todayDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const todayEvents = storedEvents.filter(event => event.start === todayDate);
+    if (todayEvents.length > 0) {
+        const serviceID = "service_tl3ba86";
+        const templateID = "template_vs8b4fc";
+        const emailParams = {
+            to_email: userEmail,
+            subject: "PlanToBe에서 오늘의 할 일을 알려드립니다.",
+            tasks: todayEvents.map(event => `- ${event.title}`).join('\n'),
+        };
+
+        emailjs.send(serviceID, templateID, emailParams)
+            .then(() => {
+                console.log("이메일 전송 성공!");
+            })
+            .catch(error => {
+                console.error("이메일 전송 실패:", error);
+            });
+    } else {
+        console.log("오늘 해야 할 일이 없습니다.");
+    }
 });
 document.getElementById('header-logo').addEventListener('click', () => {
   window.location.href = '../main.html'; // Adjust path as needed
