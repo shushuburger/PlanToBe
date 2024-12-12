@@ -15,23 +15,28 @@
     </header>
 
     <!-- 리스트 컨테이너 -->
-    <div id="list-container" class="list-container">
+    <div id="list-container" div class="list-container">
         <div class="menu">
-            <div class="menu-item" onclick="toggleContent('content1')">토양</div>
-            <div class="menu-item" onclick="toggleContent('content2')">잎</div>
-            <div class="menu-item" onclick="toggleContent('content3')">해충</div>
+            <div class="menu-item" onclick="toggleContent('content1')">잎</div>
+            <div class="menu-item" onclick="toggleContent('content2')">줄기/뿌리</div>
+            <div class="menu-item" onclick="toggleContent('content3')">꽃/열매</div>
+            <div class="menu-item" onclick="toggleContent('content4')">기타</div>
         </div>
         <div class="content" id="content1">
-            <p onclick="goToNextPage('../detail/detail.html', '흙이 브라우니가 됐을 때')">1. 흙이 브라우니가 됐을 때</p>
-            <p onclick="goToNextPage('../detail/detail.html', '흙이 부스러기가 됐을 때')">2. 흙이 부스러기가 됐을 때</p>
+            <p onclick="goToNextPage('../detail/detail1.html', '잎이 말랐을 때')">&nbsp;&nbsp;1. 잎이 말랐을 때</p>
+            <p onclick="goToNextPage('../detail/detail2.html', '잎이 노래졌을 때')">&nbsp;&nbsp;2. 잎이 노래졌을 때</p>
         </div>
         <div class="content" id="content2">
-            <p onclick="goToNextPage('../detail/detail.html', '잎이 막혔을 때')">1. 잎이 막혔을 때</p>
-            <p onclick="goToNextPage('../detail/detail.html', '잎이 뚫렸을 때')">2. 잎이 뚫렸을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '싹이 나지 않을 때')">&nbsp;&nbsp;1. 싹이 나지 않을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '줄기가 썩었을 때')">&nbsp;&nbsp;2. 줄기가 썩었을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '뿌리가 시들었을 때')">&nbsp;&nbsp;3. 뿌리가 시들었을 때</p>
         </div>
         <div class="content" id="content3">
-            <p onclick="goToNextPage('../detail/detail.html', '해충이 발생했을 때')">1. 해충이 발생했을 때</p>
-            <p onclick="goToNextPage('../detail/detail.html', '해충이 없어졌을 때')">2. 해충이 없어졌을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '꽃이 피지 않을 때')">&nbsp;&nbsp;1. 꽃이 피지 않을 때</p>
+            <p onclick="goToNextPage('../detail/detail.html', '열매를 맺지 않을 때')">&nbsp;&nbsp;2. 열매를 맺지 않을 때</p>
+        </div>
+        <div class="content" id="content4">
+            <p onclick="goToNextPage('../detail/detail.html', '이상해요')">&nbsp;&nbsp;1. 이상해요</p>
         </div>
     </div>
     <script src="list.js"></script>
