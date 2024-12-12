@@ -10,7 +10,7 @@
     <header>
         <div class="logo" id="header-logo">PlantToBe</div>
         <div class="search-bar">
-            <input type="text" placeholder="검색할 식물을 입력하세요." />
+            <input type="text" id="searchInput" placeholder="검색할 식물을 입력하세요." />
         </div>
     </header>
     <div id="detail-container" div class="detail-container">
@@ -30,6 +30,33 @@
         document.getElementById('dynamic-title').textContent = getTitleFromUrl();
         document.getElementById('header-logo').addEventListener('click', () => {
             window.location.href = '../main.html'; // Adjust path as needed
+        });
+
+        const searchInput = document.getElementById("searchInput");        
+        searchInput.addEventListener("keyup", function (event) {
+            // Enter 키가 눌렸을 때만 동작
+            if (event.key === "Enter") {
+                const searchQuery = searchInput.value.trim().toLowerCase(); // 공백 제거 및 소문자 변환
+
+                if (searchQuery.length > 0) {
+                    // 로컬스토리지에서 plantData 가져오기
+                    const plantData = JSON.parse(localStorage.getItem("plantData"));
+
+                    // plantData가 존재하고, 그 key들만 뽑아서 리스트로 만들기
+                    const plantKeys = plantData ? Object.keys(plantData) : [];
+
+                    // plantKeys에서 searchQuery와 일치하는 키가 있는지 확인
+                    const foundKey = plantKeys.find(key => key.toLowerCase().includes(searchQuery));
+
+                    if (foundKey) {
+                        // 식물이 존재하면 plant_detail.html로 이동하며 정보를 전달
+                        window.location.href = `../plant_detail/plant_detail.html?plant=${encodeURIComponent(foundKey)}`;
+                    } else {
+                        // 일치하는 식물이 없으면 실패 메시지 출력
+                        alert("식물 정보가 존재하지 않습니다.");
+                    }
+                }
+            }
         });
     </script>
 </body>
